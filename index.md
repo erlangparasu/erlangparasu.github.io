@@ -32,9 +32,15 @@ GitHub: [github.com/erlangparasu](https://github.com/erlangparasu)
 
 ### **STMIK STIKOM Bali**
 
-Sarjana Komputer `S1` | Program Studi: `Sistem Informasi` | GPA `3.67`
+Sarjana Komputer `S1`
 
-Denpasar, Bali | 2013-2017
+Program Studi: `Sistem Informasi`
+
+GPA `3.67`
+
+Denpasar, Bali
+
+2013-2017
 
 ## Work Experiences
 
@@ -42,9 +48,9 @@ Denpasar, Bali | 2013-2017
 
 ### Ganeshcom Studio
 
-PT Ganeshcom Mitra Solusi Digital | Bali
+PT Ganeshcom Mitra Solusi Digital, Bali
 
-####   **2024-2025**
+#### **2024-2025**
 
 **Project: BakmiAkiu**
 
@@ -60,7 +66,7 @@ PT Ganeshcom Mitra Solusi Digital | Bali
 
 `Backend Programmer (Golang, Gin)`
 
-####   **2023**
+#### **2023**
 
 **Project: SISKA (Sistem Informasi Kampus)**
 
@@ -74,7 +80,7 @@ PT Ganeshcom Mitra Solusi Digital | Bali
 
 `Mobile Programmer (Dart, Flutter)`
 
-####   **2021**
+#### **2021**
 
 **Project: THU Timesheet**
 
@@ -84,45 +90,45 @@ PT Ganeshcom Mitra Solusi Digital | Bali
 
 `Backend Programmer (MySQL, Laravel)`
 
-**Project: Mytimesheet.id**
+**Project: MyTimesheet.id App**
 
 `Mobile Programmer (Kotlin)`
 
-####   **2020**
+#### **2020**
 
-**Project: Les Online (Magnus Indonesia)**
-
-`Mobile Programmer (Kotlin);`
-
-`Backend Programmer (Laravel)`
-
-**Project: Rayash POS**
+**Project: Les Online (Magnus Indonesia) App**
 
 `Mobile Programmer (Kotlin)`
 
 `Backend Programmer (Laravel)`
 
-####   **2019**
+**Project: Rayash POS App**
+
+`Mobile Programmer (Kotlin)`
+
+`Backend Programmer (Laravel)`
+
+#### **2019**
 
 **Project: PEM Akamigas**
 
 `Backend Programmer (Laravel)`
 
-####   **2018**
+#### **2018**
 
-**Project: Sakira**
+**Project: SAKIRA App**
 
-`Mobile Programmer;`
+`Mobile Programmer`
 
 `Backend Programmer (Laravel)`
 
-**Project: Android App Bebek Bengil**
+**Project: BebekBengil App**
 
 `Mobile Programmer (Kotlin)`
 
 `Backend Programmer (Laravel)`
 
-####  **2017-2019**
+#### **2017-2019**
 
 **Freelance**
 
