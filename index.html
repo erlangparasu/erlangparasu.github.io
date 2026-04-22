@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Bagus Erlang Parasu | Developer Portfolio</title>
+    <meta name="description" content="Mobile & Backend Developer Portfolio of I Bagus Erlang Parasu">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #000000;
+            --surface: #111111;
+            --surface-hover: #1a1a1a;
+            --border: #222222;
+            --text: #a0a0a0;
+            --text-bright: #ffffff;
+            --accent: #5af78e;
+            --link: #40a9ff;
+            --font: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: var(--font);
+            line-height: 1.6;
+            font-size: 14px;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Selection */
+        ::selection {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-bright);
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 10px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Header / Nav */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            margin-bottom: 80px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .status {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.8rem;
+            color: var(--accent);
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--accent);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--accent);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.4; }
+            100% { opacity: 1; }
+        }
+
+        /* Hero */
+        .hero {
+            margin-bottom: 100px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: var(--text-bright);
+            letter-spacing: -0.05em;
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 600px;
+            color: var(--text);
+        }
+
+        /* Terminal Window Style */
+        .window {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-top: 40px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        }
+
+        .window-header {
+            background: #1c1c1c;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .dot { width: 12px; height: 12px; border-radius: 50%; }
+        .dot-red { background: #ff5f56; }
+        .dot-yellow { background: #ffbd2e; }
+        .dot-green { background: #27c93f; }
+
+        .window-title {
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 0.75rem;
+            color: var(--text);
+            opacity: 0.6;
+        }
+
+        .window-body {
+            padding: 24px;
+            font-size: 0.9rem;
+        }
+
+        .prompt { color: var(--accent); }
+
+        /* Sections */
+        section {
+            margin-bottom: 100px;
+        }
+
+        h2 {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--text);
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        h2::after {
+            content: "";
+            flex-grow: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        /* Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 24px;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: #444;
+            background: var(--surface-hover);
+            transform: translateY(-4px);
+        }
+
+        .card h3 {
+            color: var(--text-bright);
+            margin-bottom: 12px;
+            font-size: 1rem;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .tag {
+            background: #1a1a1a;
+            border: 1px solid var(--border);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            color: var(--text);
+        }
+
+        /* Experience Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 5px;
+            bottom: 5px;
+            width: 1px;
+            background: var(--border);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -24px;
+            top: 6px;
+            width: 8px;
+            height: 8px;
+            background: var(--bg);
+            border: 1px solid var(--text);
+            border-radius: 50%;
+        }
+
+        .timeline-date {
+            font-size: 0.8rem;
+            color: var(--text);
+            margin-bottom: 5px;
+        }
+
+        .timeline-title {
+            color: var(--text-bright);
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .timeline-company {
+            color: var(--text);
+            font-style: italic;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .project-list {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .project-list li {
+            margin-bottom: 12px;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .project-list li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        .project-list b {
+            color: var(--text-bright);
+        }
+
+        /* Links */
+        a {
+            color: var(--text-bright);
+            text-decoration: none;
+            border-bottom: 1px solid var(--border);
+            transition: all 0.2s;
+        }
+
+        a:hover {
+            color: var(--link);
+            border-color: var(--link);
+        }
+
+        footer {
+            padding: 60px 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2rem; }
+            .container { padding: 20px; }
+            header { margin-bottom: 40px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div class="logo">~/erlangparasu</div>
+        <div class="status">
+            <span class="status-dot"></span>
+            AVAILABLE FOR PROJECTS
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>I BAGUS ERLANG PARASU</h1>
+            <p>Mobile & Backend Developer focusing on performance, scalability, and framework-agnostic solutions.</p>
+            
+            <div class="window">
+                <div class="window-header">
+                    <div class="dot dot-red"></div>
+                    <div class="dot dot-yellow"></div>
+                    <div class="dot dot-green"></div>
+                    <div class="window-title">zsh — 80x24</div>
+                </div>
+                <div class="window-body">
+                    <div><span class="prompt">➜</span> <span class="text-bright">cat</span> about_me.txt</div>
+                    <div style="margin: 10px 0 20px 0; color: var(--text-bright);">
+                        I am driven by technical curiosity and an eagerness to learn. I prioritize selecting the toolset that best addresses the specific constraints and requirements of the problem. Understanding core concepts is key. Hands-on practice is my route to building high-quality solutions.
+                    </div>
+                    <div><span class="prompt">➜</span> <span class="text-bright">ls</span> contact_info/</div>
+                    <div style="margin-top: 10px;">
+                        <a href="https://linkedin.com/in/erlang-parasu-187031145/">LinkedIn</a> &nbsp; 
+                        <a href="https://github.com/erlangparasu">GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Technical Stack</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Mobile Development</h3>
+                    <div class="tags">
+                        <span class="tag">Flutter</span>
+                        <span class="tag">Kotlin</span>
+                        <span class="tag">React Native</span>
+                        <span class="tag">Java</span>
+                        <span class="tag">Dart</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>Backend & Systems</h3>
+                    <div class="tags">
+                        <span class="tag">Golang</span>
+                        <span class="tag">Rust</span>
+                        <span class="tag">Laravel</span>
+                        <span class="tag">PHP</span>
+                        <span class="tag">MySQL</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>Infrastructure</h3>
+                    <div class="tags">
+                        <span class="tag">Linux</span>
+                        <span class="tag">Docker</span>
+                        <span class="tag">Podman</span>
+                        <span class="tag">Ansible</span>
+                        <span class="tag">Jenkins</span>
+                        <span class="tag">Bash</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2>Work Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2018 — PRESENT</div>
+                    <div class="timeline-title">Software Engineer</div>
+                    <span class="timeline-company">Ganeshcom Studio (PT Ganeshcom Mitra Solusi Digital, Bali)</span>
+                    
+                    <ul class="project-list">
+                        <li><b>2024-2025:</b> BakmiAkiu (Backend & SysAdmin), Ramerame (SysAdmin), POS Coworking Space (Golang)</li>
+                        <li><b>2023:</b> SISKA Campus System (SysAdmin), SIMA Archive (Mobile Flutter), AIMS AIDA (Mobile Flutter)</li>
+                        <li><b>2021:</b> THU Timesheet (Laravel), SIMA Archive (Laravel), MyTimesheet.id (Kotlin)</li>
+                        <li><b>2020:</b> Les Online App (Kotlin/Laravel), Rayash POS (Kotlin/Laravel)</li>
+                        <li><b>2018-2019:</b> PEM Akamigas (Laravel), SAKIRA App, BebekBengil App (Kotlin/Laravel)</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">2017 — 2019</div>
+                    <div class="timeline-title">Freelance Developer</div>
+                    <span class="timeline-company">Self-employed</span>
+                    <ul class="project-list">
+                        <li>Web Development using HTML, JS, Google Maps API</li>
+                        <li>Android Native Development with Java</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+            <div class="card">
+                <h3>STMIK STIKOM Bali</h3>
+                <p>Sarjana Komputer (S1) — Sistem Informasi</p>
+                <div style="margin-top: 10px; font-size: 0.8rem;">
+                    <span>GPA: 3.67</span> • <span>2013 - 2017</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 I BAGUS ERLANG PARASU. All systems operational.</p>
+    </footer>
+</div>
+
+</body>
+</html>
